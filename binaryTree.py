@@ -1,0 +1,3 @@
+class TreeNode:
+    def __int__(self, node_value):
+        ...
