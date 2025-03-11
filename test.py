@@ -1,5 +1,3 @@
-import math
+num = 2 % 1
 
-num = 10
-
-print(math.s)
+print(num)
