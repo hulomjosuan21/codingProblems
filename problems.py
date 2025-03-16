@@ -10,7 +10,7 @@ class CodingProblems:
         return self.statement
 
     @staticmethod
-    def isPrimeNumber(n) -> str:
+    def isPrimeNumber(n):
         is_prime = True
         if n <= 1:
             is_prime = False
@@ -24,7 +24,7 @@ class CodingProblems:
                     is_prime = False
                     break
 
-        return f"{n} is Prime number" if is_prime else f"{n} is not Prime number"
+        return is_prime
 
     @staticmethod
     def findMinMax(arr) -> tuple:
@@ -101,4 +101,93 @@ class CodingProblems:
 
         return curr
 
-print(CodingProblems.findNthFibonacciNumber(6))
+    @staticmethod
+    def findMissingNumber(arr,n):
+        expected_sum = n * (n+1) // 2
+
+        actual_sum = 0
+        for n in arr:
+            actual_sum += n
+
+        # actual_sum = sum(arr)
+
+        return expected_sum - actual_sum
+
+    @staticmethod
+    def bubbleSort(arr):
+        n = len(arr)
+
+        for i in range(n):
+            for j in range(n - i - 1):
+                if arr[j] > arr[j+1]:
+                    arr[j], arr[j+1] = arr[j+1], arr[j]
+
+        return arr
+
+    @staticmethod
+    def mergeTwoSortedArray(arr1,arr2) -> []:
+        i,j = 0,0
+
+        merged_arr = []
+
+        while i < len(arr1) and j < len(arr2):
+            if arr1[i] < arr2[j]:
+                merged_arr.append(arr1[i])
+                i += 1
+            else:
+                merged_arr.append(arr2[j])
+                j += 1
+
+        while i < len(arr1):
+            merged_arr.append(arr1[i])
+            i += 1
+
+        while j < len(arr2):
+            merged_arr.append(arr2[j])
+            j += 1
+
+        return merged_arr
+
+    @staticmethod
+    def insertionSort(arr):
+        n = len(arr)
+        for i in range(1, n):
+            temp = arr[i]
+            j = i - 1
+
+            while j >= 0 and arr[j] > temp:
+                arr[j+1] = arr[j]
+                j -= 1
+
+            arr[j+1] = temp
+
+
+    @staticmethod
+    def findLongestCommonPrefix(arr):
+        shortest_str = arr[0]
+
+        for c in arr:
+            if len(c) < len(shortest_str):
+                shortest_str = c
+
+        for i in range(len(shortest_str)):
+            char = shortest_str[i]
+            for s in arr:
+                if s[i] != char:
+                    return  shortest_str[:i]
+
+        return shortest_str
+
+    @staticmethod
+    def findFirstNonRepeatingCharacter(string):
+        ...
+
+
+
+strings = ["interstellar", "internet", "interval"]
+result = CodingProblems.findLongestCommonPrefix(strings)
+
+print(result)
+
+
+

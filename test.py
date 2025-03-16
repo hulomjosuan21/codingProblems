@@ -1,3 +1,6 @@
-num = 2 % 1
+from itertools import repeat
 
-print(num)
+repeater = repeat("Josuan",10)
+
+for i in repeater:
+    print(i)
