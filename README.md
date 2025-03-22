@@ -289,3 +289,19 @@ def two_sum_problem(arr, target):
 
 print(two_sum_problem([2, 7, 11, 15], 9))  # Output: [0, 1]
 ```
+## Check If a String is a Palindrome  
+Implement a function `check_if_palindrome(string)` that checks whether a given string is a palindrome. A palindrome is a word, phrase, or sequence that reads the same forward and backward.  
+
+```python
+def check_if_palindrome(string):
+    i, j = 0, len(string) - 1
+    while i < j:
+        if string[i] != string[j]:
+            return False
+        i += 1
+        j -= 1
+    return True
+
+print(check_if_palindrome("level"))  # Output: True
+print(check_if_palindrome("hello"))  # Output: False
+```
