@@ -65,8 +65,13 @@ from itertools import count, repeat, cycle, accumulate, chain, compress, pairwis
 
 # |---------------------------------------|
 
-# result = combinations(['A','B','C'],2)
-#
-# print(list(result))
+result = combinations(['A','B','C'],2)
+
+print(list(result))
 
 # |---------------------------------------|
+from itertools import permutations
+
+items = ['A', 'B', 'C']
+perms = list(permutations(items, 2))  # Arranging 2 out of 3 elements
+print(perms)

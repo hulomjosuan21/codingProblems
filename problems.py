@@ -1,6 +1,9 @@
 import math
 
-class CodingProblems:
+from jinja2.utils import missing
+
+
+class CodingProblems1:
     statement = "Coding problems that I solve during my practice for coding competition"
 
     def __str__(self):
@@ -47,6 +50,8 @@ class CodingProblems:
     @staticmethod
     def reverseAString(text) -> str:
         temp = ''
+
+        # temp = text[::-1]
 
         for i in range(len(text)-1,-1,-1):
             temp += text[i]
@@ -182,12 +187,147 @@ class CodingProblems:
     def findFirstNonRepeatingCharacter(string):
         ...
 
+    @staticmethod
+    def getConsonants():
+        import string
+
+        vowels = "aeiou"
+
+        consonants = [letter for letter in string.ascii_lowercase if letter not in vowels]
+
+        print("".join(consonants))
 
 
-strings = ["interstellar", "internet", "interval"]
-result = CodingProblems.findLongestCommonPrefix(strings)
+
+class CodingProblems2:
+    def reverse_string(self):
+        string = "text"
+
+        string = string[::-1]
+
+        print(string)
+
+    def find_largest(self):
+        arr = [1,2,9,5,3]
+
+        _max = arr[0]
+
+        for i in arr:
+            if i > _max:
+                _max = i
+
+        print(_max)
+
+    def check_palindrome(self):
+        string = "text"
+
+        reversed_string = string[::-1]
+
+        if string == reversed_string:
+            print(f"{string} is Palindrome")
+        else:
+            print(f"{string} is not palindrome")
+
+    def count_frequency_char_in_str(self):
+        string = "jjjoos"
+
+        _string_dic = {}
+
+        for c in string:
+            if c in _string_dic:
+                _string_dic[c] += 1
+            else:
+                _string_dic[c] = 1
+
+        print(_string_dic)
+
+    def find_first_non_repeating_char(self):
+        string = "jjqmsjssaqqq"
+
+        char_count = {}
+
+        for c in string:
+            if c in char_count:
+                char_count[c] += 1
+            else:
+                char_count[c] = 1
+
+        s = ''
+
+        for k,v in char_count.items():
+            if v == 1:
+                s = k
+                break
+
+        print(f"the first non repeating character is {s}")
+
+    def longest_substring_without_repeating_character(self):
+        s = "abcabcbb"
+
+        char_set = set()  # To store unique characters
+        left = 0  # Left pointer of the window
+        max_length = 0  # To store the max length
+
+        for right in range(len(s)):  # Right pointer moves through the string
+            while s[right] in char_set:  # If duplicate found, shrink window
+                char_set.remove(s[left])
+                left += 1
+
+            char_set.add(s[right])  # Add unique character to the set
+            max_length = max(max_length, right - left + 1)  # Update max length
+
+
+        print(max_length)
+
+    def find_missing_num(self):
+        arr = [1,2,3,4,5,6,7,8,9,10,11,13]
+        n = len(arr) + 1
+
+        expected_sum = n * (n + 1) // 2
+
+        actual_sum = sum(arr)
+
+        print(f"The missing numbers is {expected_sum - actual_sum}")
+
+    def relation_to_josuan(self, name):
+        family_tree = {
+            "father": "Darth Vader",
+            "sister": "Leia",
+            "brother in law": "Han",
+            "R2D2": "droid"
+        }
+
+        relation = next((k for k, v in family_tree.items() if v == name),None)
+
+        print(f"{name}, I am your {relation}")
+
+    def get_median_of_two_sorted_array(self,arr):
+        n = len(arr)
+
+        if n % 2 == 0:
+            mid1 = n // 2 - 1
+            mid2 = n // 2
+            return (arr[mid1] + arr[mid2]) / 2
+        else:
+            mid = n // 2
+            return (arr[mid - 1] + arr[mid]) / 2
+
+    def two_sum_problem(self, arr, target):
+        n = len(arr)
+        x, y = -1, -1
+        for i in range(n):
+            for j in range(i + 1, n):
+                if arr[i] + arr[j] == target:
+                    x, y = i, j
+                    break
+            if x != -1:
+                break
+
+        return [x,y]
+
+
+problem2 = CodingProblems2()
+
+result = problem2.two_sum_problem([2,2,3,4,2,3,1,3,4],8)
 
 print(result)
-
-
-

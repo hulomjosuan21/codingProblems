@@ -4,5 +4,12 @@ class Node:
         self._next = _next
 
 class LinkedList:
-    def __init__(self,head):
-        self.head = head
+    def __init__(self):
+        self.head = None
+
+    def insert_at_beginning(self,data):
+        node = Node(data,self.head)
+        self.head = Node
+
+    def print(self):
+        ...
