@@ -23,3 +23,20 @@ def is_prime_number(n):
 result = "Prime" if is_prime_number(8) else "Not Prime"
 print(result)  # Output: Not Prime
 ```
+## Find Minimum and Maximum  
+Given a list of numbers, implement a function `findMinMax(arr)` that returns a tuple containing the minimum and maximum values in the list. The function iterates through the list, updating the minimum and maximum values accordingly.  
+
+```python
+def findMinMax(arr) -> tuple:
+    _min, _max = arr[0], arr[0]
+
+    for e in arr:
+        if e < _min:
+            _min = e
+        if e > _max:
+            _max = e
+
+    return _min, _max
+
+print(findMinMax([1,2,3]))
+```
