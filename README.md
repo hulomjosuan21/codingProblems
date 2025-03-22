@@ -1,6 +1,4 @@
-# Prime Number Checker
-
-## Problem Statement  
+## Prime Number Checker 
 A prime number is a natural number greater than 1 that has only two factors: 1 and itself. The goal is to implement a function `is_prime_number(n)` that checks whether a given number `n` is prime. The function should return `True` if the number is prime and `False` otherwise.  
 
 ```python
