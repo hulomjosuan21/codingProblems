@@ -224,3 +224,15 @@ These compare memory locations of objects.
 | `asyncio.Loop.create_task(coro)` | Schedules a coroutine as a task in an existing loop. | `loop.create_task(my_coro())` |
 | `asyncio.Loop.run_forever()` | Runs the event loop indefinitely. | `loop.run_forever()` |
 | `asyncio.Loop.stop()` | Stops the event loop. | `loop.stop()` |
+
+## Python `functools` Module
+
+| Function | Description | Example |
+|----------|------------|---------|
+| `functools.reduce(func, iterable, init)` | Applies a function cumulatively to items in an iterable, reducing it to a single value. | `reduce(lambda x, y: x + y, [1, 2, 3, 4]) → 10` |
+| `functools.lru_cache(maxsize=None)` | Caches the results of a function to improve performance. | `@lru_cache(maxsize=128) def fib(n): return n if n < 2 else fib(n-1) + fib(n-2)` |
+| `functools.partial(func, *args, **kwargs)` | Returns a new function with fixed arguments. | `double = partial(lambda x, y: x * y, 2); double(5) → 10` |
+| `functools.singledispatch(func)` | Creates a generic function that can be specialized for different types. | `@singledispatch def process(val): print("General"); @process.register(int) def _(val): print("Integer")` |
+| `functools.wraps(wrapper)` | Preserves the original function’s metadata when wrapping it with another function. | `@wraps(original_func) def wrapper(): pass` |
+| `functools.cmp_to_key(func)` | Converts an old-style comparison function into a key function for sorting. | `sorted([5, 2, 4], key=cmp_to_key(lambda x, y: x - y))` |
+| `functools.total_ordering(cls)` | Generates missing comparison methods for a class. | `@total_ordering class MyClass: def __lt__(self, other): ...` |
