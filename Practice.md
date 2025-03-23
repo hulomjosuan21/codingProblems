@@ -71,6 +71,7 @@ These compare memory locations of objects.
 | `ord(char)` | Returns the Unicode code of a character. | `ord('A') → 65` |
 | `chr(code)` | Returns the character for a Unicode code. | `chr(65) → 'A'` |
 | `abs(x)` | Returns the absolute value of `x`. | `abs(-5) → 5` |
+| `map(func, iterable, ...)` | Applies a function to all items in an iterable and returns a map object. | `map(str.upper, ['a', 'b', 'c']) → ['A', 'B', 'C']` |
 | `all(iterable)` | Returns `True` if all elements in `iterable` are `True`. | `all([True, 1, "abc"]) → True` |
 | `any(iterable)` | Returns `True` if any element in `iterable` is `True`. | `any([False, 0, "abc"]) → True` |
 | `ascii(obj)` | Returns a string with non-ASCII characters escaped. | `ascii("ñ") → "'\\xf1'"` |
