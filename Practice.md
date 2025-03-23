@@ -178,3 +178,24 @@ These compare memory locations of objects.
 | `collections.UserDict()` | A wrapper around a standard dictionary that can be subclassed. | `class MyDict(UserDict): pass` |
 | `collections.UserList()` | A wrapper around a standard list that can be subclassed. | `class MyList(UserList): pass` |
 | `collections.UserString()` | A wrapper around a standard string that can be subclassed. | `class MyStr(UserString): pass` |
+
+# Python `asyncio` Module
+
+| Function / Class | Description | Example |
+|------------------|------------|---------|
+| `asyncio.run(coro)` | Runs an async function (coroutine) and manages the event loop. | `asyncio.run(main())` |
+| `asyncio.create_task(coro)` | Creates and schedules an asynchronous task. | `task = asyncio.create_task(my_coro())` |
+| `asyncio.sleep(seconds)` | Asynchronously sleeps for the given time. | `await asyncio.sleep(2)` |
+| `asyncio.gather(*coros)` | Runs multiple async functions concurrently and gathers results. | `await asyncio.gather(task1(), task2())` |
+| `asyncio.wait(tasks)` | Runs multiple tasks concurrently and waits for completion. | `await asyncio.wait([task1(), task2()])` |
+| `asyncio.shield(coro)` | Protects a coroutine from being cancelled. | `await asyncio.shield(task)` |
+| `asyncio.TimeoutError` | Raised when an operation exceeds a timeout. | `raise asyncio.TimeoutError()` |
+| `asyncio.Queue(maxsize=0)` | A FIFO async queue for inter-task communication. | `queue = asyncio.Queue(); await queue.put(10)` |
+| `asyncio.Lock()` | An asynchronous lock for synchronizing coroutines. | `lock = asyncio.Lock(); async with lock: ...` |
+| `asyncio.Event()` | An async event to notify coroutines. | `event = asyncio.Event(); await event.wait()` |
+| `asyncio.Condition()` | An async condition variable for coroutine synchronization. | `cond = asyncio.Condition(); async with cond: ...` |
+| `asyncio.Semaphore(value=1)` | Limits concurrency by allowing only `value` tasks at a time. | `sem = asyncio.Semaphore(2); async with sem: ...` |
+| `asyncio.run_coroutine_threadsafe(coro, loop)` | Runs a coroutine from a different thread. | `asyncio.run_coroutine_threadsafe(coro, loop)` |
+| `asyncio.Loop.create_task(coro)` | Schedules a coroutine as a task in an existing loop. | `loop.create_task(my_coro())` |
+| `asyncio.Loop.run_forever()` | Runs the event loop indefinitely. | `loop.run_forever()` |
+| `asyncio.Loop.stop()` | Stops the event loop. | `loop.stop()` |
