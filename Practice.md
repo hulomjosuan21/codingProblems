@@ -143,6 +143,30 @@ These compare memory locations of objects.
 | `bin(x)` | Converts an integer to a binary string. | `bin(5) → '0b101'` |
 | `hex(x)` | Converts an integer to a hexadecimal string. | `hex(255) → '0xff'` |
 | `oct(x)` | Converts an integer to an octal string. | `oct(8) → '0o10'` |
+| `math.prod(iterable)` | Returns the product of all elements in an iterable. | `math.prod([2, 3, 4]) → 24` |
+| `math.factorial(x)` | Returns the factorial of `x`. | `math.factorial(5) → 120` |
+| `math.gcd(a, b)` | Returns the greatest common divisor of `a` and `b`. | `math.gcd(8, 12) → 4` |
+| `math.lcm(a, b)` | Returns the least common multiple of `a` and `b`. | `math.lcm(8, 12) → 24` |
+| `math.isqrt(x)` | Returns the integer square root of `x`. | `math.isqrt(10) → 3` |
+| `math.sqrt(x)` | Returns the square root of `x`. | `math.sqrt(16) → 4.0` |
+| `math.exp(x)` | Returns `e ** x`. | `math.exp(2) → 7.389` |
+| `math.log(x, base)` | Returns the logarithm of `x` to the given base. | `math.log(8, 2) → 3.0` |
+| `math.log10(x)` | Returns the base-10 logarithm of `x`. | `math.log10(100) → 2.0` |
+| `math.log2(x)` | Returns the base-2 logarithm of `x`. | `math.log2(8) → 3.0` |
+| `math.sin(x)` | Returns the sine of `x` (radians). | `math.sin(math.pi / 2) → 1.0` |
+| `math.cos(x)` | Returns the cosine of `x` (radians). | `math.cos(0) → 1.0` |
+| `math.tan(x)` | Returns the tangent of `x` (radians). | `math.tan(math.pi / 4) → 1.0` |
+| `math.degrees(x)` | Converts radians to degrees. | `math.degrees(math.pi) → 180.0` |
+| `math.radians(x)` | Converts degrees to radians. | `math.radians(180) → 3.1416` |
+| `math.ceil(x)` | Returns the smallest integer greater than or equal to `x`. | `math.ceil(3.2) → 4` |
+| `math.floor(x)` | Returns the largest integer less than or equal to `x`. | `math.floor(3.8) → 3` |
+| `math.trunc(x)` | Truncates `x`, removing the decimal part. | `math.trunc(3.9) → 3` |
+| `math.copysign(x, y)` | Returns `x` with the sign of `y`. | `math.copysign(3, -1) → -3.0` |
+| `math.fabs(x)` | Returns the absolute value of `x`. | `math.fabs(-3.5) → 3.5` |
+| `math.fmod(x, y)` | Returns the remainder of `x / y`. | `math.fmod(10, 3) → 1.0` |
+| `math.frexp(x)` | Returns `(m, e)` such that `x = m * 2**e`. | `math.frexp(8) → (0.5, 4)` |
+| `math.modf(x)` | Returns the fractional and integer parts of `x`. | `math.modf(3.5) → (0.5, 3.0)` |
+| `math.hypot(x, y)` | Returns the Euclidean norm, `sqrt(x² + y²)`. | `math.hypot(3, 4) → 5.0` |
 
 ## Python `itertools` Functions
 
