@@ -1,3 +1,7 @@
+## Get key by value of python dictionary
+```python
+key = next(k for k, v in my_dict.items() if v == 10)
+```
 ## Reverse Index Iteration
 ```python
 n = 5
