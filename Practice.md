@@ -21,6 +21,7 @@ while i < n:
 ``` python
 for i in range(start, stop, step):
 ```
+## Python Conditional Operators
 #### 1. Comparison Operators (Relational Operators)  
 These compare two values and return `True` or `False`.
 
