@@ -1,3 +1,4 @@
+## Reverse Index Iteration
 ```python
 n = 5
 
@@ -15,4 +16,8 @@ while i < n:
 # 2 : 2
 # 3 : 1
 # 4 : 0
+```
+## Range Parameters in Python
+``` python
+for i in range(start, stop, step):
 ```
