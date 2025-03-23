@@ -305,3 +305,14 @@ def check_if_palindrome(string):
 print(check_if_palindrome("level"))  # Output: True
 print(check_if_palindrome("hello"))  # Output: False
 ```
+## Digital Decipher
+```python
+def digital_decipher(s, key):
+    ascii_val = [ord(i) for i in s]
+
+    result = ''
+    for n in ascii_val:
+        result += chr(n-key)
+
+    return result
+```
