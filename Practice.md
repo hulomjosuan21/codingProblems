@@ -58,31 +58,14 @@ These compare memory locations of objects.
 |----------|--------------------------------------|-------------------------------------|
 | `is`     | Returns `True` if both refer to the same object | `a is b → True` |
 | `is not` | Returns `True` if they refer to different objects | `a is not c → True` |
-## Built-in Function
-# Python Built-in Functions
-
-## 1. `sum()`
-**Description:** Returns the sum of all items in an iterable.  
-**Example:** `sum([1, 2, 3])` → `6`
-
-## 2. `next()`
-**Description:** Retrieves the next item from an iterator.  
-**Example:** `next(iter([10, 20, 30]))` → `10`
-
-## 3. `ord()`
-**Description:** Returns the Unicode code of a character.  
-**Example:** `ord('A')` → `65`
-
-## 4. `chr()`
-**Description:** Returns the character for a Unicode code.  
-**Example:** `chr(65)` → `'A'`
-
----
 
 ## Full List of Python Built-in Functions:
-
 | Function       | Description | Example |
 |---------------|------------|---------|
+| `sum(iterable)` | Returns the sum of all items in an iterable. | `sum([1, 2, 3]) → 6` |
+| `next(iterator)` | Retrieves the next item from an iterator. | `next(iter([10, 20, 30])) → 10` |
+| `ord(char)` | Returns the Unicode code of a character. | `ord('A') → 65` |
+| `chr(code)` | Returns the character for a Unicode code. | `chr(65) → 'A'` |
 | `abs(x)` | Returns the absolute value of `x`. | `abs(-5) → 5` |
 | `all(iterable)` | Returns `True` if all elements in `iterable` are `True`. | `all([True, 1, "abc"]) → True` |
 | `any(iterable)` | Returns `True` if any element in `iterable` is `True`. | `any([False, 0, "abc"]) → True` |
@@ -141,3 +124,53 @@ These compare memory locations of objects.
 | `sum(iterable)` | Returns sum of elements. | `sum([1, 2, 3]) → 6` |
 | `tuple(iterable)` | Converts `iterable` to tuple. | `tuple([1, 2, 3]) → (1, 2, 3)` |
 | `zip(*iterables)` | Zips iterables together. | `list(zip([1, 2], ['a', 'b'])) → [(1, 'a'), (2, 'b')]` |
+
+## Python Math Built-in Functions
+
+| Function | Description | Example |
+|----------|------------|---------|
+| `abs(x)` | Returns the absolute value of `x`. | `abs(-5) → 5` |
+| `divmod(a, b)` | Returns a tuple `(a // b, a % b)`. | `divmod(10, 3) → (3, 1)` |
+| `max(iterable, *args)` | Returns the maximum value. | `max([1, 5, 3]) → 5` |
+| `min(iterable, *args)` | Returns the minimum value. | `min([1, 5, 3]) → 1` |
+| `pow(x, y, mod)` | Returns `(x ** y) % mod` (if `mod` is given). | `pow(2, 3) → 8` |
+| `round(x, n)` | Rounds `x` to `n` decimal places. | `round(3.1415, 2) → 3.14` |
+| `sum(iterable, start)` | Returns the sum of all items in an iterable. | `sum([1, 2, 3]) → 6` |
+| `bin(x)` | Converts an integer to a binary string. | `bin(5) → '0b101'` |
+| `hex(x)` | Converts an integer to a hexadecimal string. | `hex(255) → '0xff'` |
+| `oct(x)` | Converts an integer to an octal string. | `oct(8) → '0o10'` |
+
+## Python `itertools` Functions
+
+| Function | Description | Example |
+|----------|------------|---------|
+| `itertools.count(start, step)` | Returns an infinite iterator that counts from `start`, incrementing by `step`. | `count(10, 2) → 10, 12, 14, ...` |
+| `itertools.cycle(iterable)` | Cycles through an iterable indefinitely. | `cycle([1, 2, 3]) → 1, 2, 3, 1, 2, 3, ...` |
+| `itertools.repeat(item, n)` | Repeats an item `n` times (or indefinitely if `n` is not given). | `repeat(5, 3) → 5, 5, 5` |
+| `itertools.permutations(iterable, r)` | Returns all possible `r`-length permutations of elements. | `permutations([1, 2, 3], 2) → (1,2), (1,3), (2,1), ...` |
+| `itertools.combinations(iterable, r)` | Returns all possible `r`-length combinations (order doesn’t matter). | `combinations([1, 2, 3], 2) → (1,2), (1,3), (2,3)` |
+| `itertools.combinations_with_replacement(iterable, r)` | Like `combinations()`, but allows repeated elements. | `combinations_with_replacement([1, 2], 2) → (1,1), (1,2), (2,2)` |
+| `itertools.product(*iterables, repeat=n)` | Returns Cartesian product of input iterables. | `product([1, 2], [3, 4]) → (1,3), (1,4), (2,3), (2,4)` |
+| `itertools.chain(*iterables)` | Chains multiple iterables together. | `chain([1, 2], [3, 4]) → 1, 2, 3, 4` |
+| `itertools.islice(iterable, start, stop, step)` | Slices an iterable like `list[start:stop:step]`. | `islice(range(10), 2, 8, 2) → 2, 4, 6` |
+| `itertools.compress(data, selectors)` | Filters `data`, keeping only items where `selectors` is `True`. | `compress('ABC', [1, 0, 1]) → 'A', 'C'` |
+| `itertools.dropwhile(predicate, iterable)` | Drops elements while `predicate` is `True`, then returns the rest. | `dropwhile(lambda x: x < 5, [1, 3, 5, 7]) → 5, 7` |
+| `itertools.takewhile(predicate, iterable)` | Returns elements while `predicate` is `True`, then stops. | `takewhile(lambda x: x < 5, [1, 3, 5, 7]) → 1, 3` |
+| `itertools.tee(iterable, n)` | Creates `n` independent iterators from a single iterable. | `tee([1, 2, 3], 2) → (iterator1, iterator2)` |
+| `itertools.groupby(iterable, key)` | Groups elements based on a key function. | `groupby('AAABBBCC', key=lambda x: x) → ('A', 'AAA'), ('B', 'BBB'), ('C', 'CC')` |
+| `itertools.starmap(function, iterable)` | Applies a function to arguments unpacked from iterable tuples. | `starmap(pow, [(2,5), (3,2)]) → 32, 9` |
+| `itertools.accumulate(iterable, func)` | Returns accumulated results using `func` (default is sum). | `accumulate([1, 2, 3, 4]) → 1, 3, 6, 10` |
+
+## Python `collections` Module
+
+| Function / Class | Description | Example |
+|------------------|------------|---------|
+| `collections.Counter(iterable)` | A dictionary subclass for counting elements. | `Counter("banana") → {'a': 3, 'n': 2, 'b': 1}` |
+| `collections.defaultdict(default_factory)` | A dictionary that provides a default value for missing keys. | `defaultdict(int)['x'] → 0` |
+| `collections.OrderedDict()` | A dictionary that maintains insertion order (since Python 3.7, `dict` does this too). | `OrderedDict([('a', 1), ('b', 2)])` |
+| `collections.deque(iterable, maxlen)` | A double-ended queue supporting fast appends and pops. | `deque([1, 2, 3]).appendleft(0) → deque([0, 1, 2, 3])` |
+| `collections.namedtuple(typename, field_names)` | Creates a tuple subclass with named fields. | `Point = namedtuple('Point', 'x y'); Point(1, 2) → Point(x=1, y=2)` |
+| `collections.ChainMap(*dicts)` | Groups multiple dictionaries into a single view. | `ChainMap({'a': 1}, {'b': 2})['a'] → 1` |
+| `collections.UserDict()` | A wrapper around a standard dictionary that can be subclassed. | `class MyDict(UserDict): pass` |
+| `collections.UserList()` | A wrapper around a standard list that can be subclassed. | `class MyList(UserList): pass` |
+| `collections.UserString()` | A wrapper around a standard string that can be subclassed. | `class MyStr(UserString): pass` |
