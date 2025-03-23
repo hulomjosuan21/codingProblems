@@ -21,7 +21,7 @@ while i < n:
 ``` python
 for i in range(start, stop, step):
 ```
-| Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
-| Data 1   | Data 2   | Data 3   |
-| Data 4   | Data 5   | Data 6   |
+| Left Align | Center Align | Right Align |
+|:----------|:-----------:|-----------:|
+| Data 1    | Data 2      | Data 3     |
+| Data 4    | Data 5      | Data 6     |
